@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Fira Code';
+  src: url('assets/fira_code/FiraCode-Regular.woff2') format('woff2'),
+    url('assets/fira_code/FiraCode-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Code';
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.images-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.game-board {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.active {
+  background-color: beige;
+  padding: 2em;
+  border-radius: 1.5em;
+}
+
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.controls-container {
+  margin: 4rem 0;
+}
+
+img {
+  height: auto;
+  transform: rotate(0deg);
+}
+
+img:hover {
+  cursor: pointer;
+  transform: rotate(15deg);
+  transition: transform 0.5s;
+}
+
+.won,
+.lost,
+.tied {
+  font-size: xx-large;
+  text-align: center;
+  animation: blink 1s infinite alternate;
+}
+
+.won {
+  color: blue;
+}
+
+.lost {
+  color: red;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.playerOutcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.playerOutcome:not(:first-child) {
+  margin-bottom: 3rem;
+}
+
+.outcomeImg {
+  animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+  from {
+    transform: rotate(-15deg);
+  }
+  to {
+    transform: rotate(15deg);
+  }
+}
